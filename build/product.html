@@ -2,80 +2,79 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>Компания</title>
+    <title>Продукт</title>
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.min.css">
 
-    <!--Swiper-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
-    <!--end-->
+    <!--jQuery-->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!--Fancybox-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 </head>
-<body>
+<body js-body>
 
-<div class="top-line c-white" id="top-line">
-    <div class="container-fluid">
-        <div class="d-flex align-items-center">
-            <p class="ff-400-12 mr30 top-line__p"><a href="#" class="c-white a_hover">+7 (383) 207-52-20</a></p>
-            <p class="ff-400-12 top-line__p">Новосибирск, ул. Петухова, д. 17</p>
-            <a href="#" class="top-line__a">
-                <img src="data:image/png;base64,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" alt="">
-            </a>
-            <div class="search d-flex ">
-                <a href="#" class="search__btn a_hover link-hover">
-                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABJUlEQVQ4jZ2TLUtEQRSGn3uLWfwIi9pEDNuURdy0oCB+sEGbySAoC/4BtRktRn+CQUyLSTQIGgWDyaSod4PYbI9lLu5e7tWrL7wMM8N55pw5M5FKlyaBTWAG6AeegHPgGPggR3EYI2AfuAA6wDawABwAE8AD0MgDoKLuqrfqYJhnXVdf1OnsHuq4+qoOFwSnbqp3aty9Hoeaj4AkN8VvnQGfwGz2DurhosqonQcYKHF6qgQYygISoFISUAHesoArYLlEcAQsAZc9q+pY6MLoL11YV2/UKNtG1JZ6H2B5wYvqu7qT9w5Sb6kd9VCdV6fUNfVUfVRXQ6YrRQDUEXVPbavX6om6ofaF/ar63A35qeYiV9VEnfsvALUW/kYjsvc7/0U1oPUFigGw86Vd3dcAAAAASUVORK5CYII=" alt="search" class="a_hover">
-                </a>
-                <div class="menu-open" id="nav_open">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+<div class="top-line">
+    <a href="tel:+7383275220" class="top-line__phone">+7 (383) 207-52-20</a>
+    <p class="top-line__desc">Новосибирск, ул. Петухова, д. 17</p>
+    <a href="/" class="top-line__link">
+        <img class="top-line__logo" src="img/logo-white.png" alt="logo">
+    </a>
+    <div class="top-line__control">
+        <a href="#" class="top-line__search">
+            <img class="top-line__search-icon" src="img/search-icon.png" alt="search">
+        </a>
+        <div class="top-line__menu-btn" js-menu-btn>
+            <span class="top-line__menu-btn-item"></span>
+            <span class="top-line__menu-btn-item"></span>
+            <span class="top-line__menu-btn-item"></span>
         </div>
     </div>
 </div>
-<nav class="mobile-nav">
-    <a href="#" class="pl-20 mobile-nav__top flex-link" data-toggle="modal" data-target="#modal-form">Оставить заявку
-        <img src="img/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAcCAYAAAATFf3WAAAACXBIWXMAACE3AAAhNwEzWJ96AAABGklEQVRYw83Xu23DMBCA4f+E9PEoygRRCtYBzAGsbJINMoKlAQi4Not4BHuTZIJLw8IwIpm0YZ5Y6QGBn+54xFFUlSWPp0dPID4ezm4HDW4o+v7RERQfLyf4KEE2Blnbio/9koCne5A1gN09SKlVxeLjAGz+eTW7JqutQQ2uB8bSSFYtkivIT9MUZ6Z7TD9hus3MRXKT8LbAEqSw3q+AAVgZWV8nno8aXC+s9zvgfaG9wktjGLmc0TYpvUscv8BOVBXxsTWKZAt8TeA6De4oVg1rCsoBeJ7CmW0zuTgTYAmuOnAGdwLaS1yVM0kmrtPgfsy6GfGxuwVXBZh6ve9bcLUiuJ04p1zFWW0z2TgLYBGuVhW/nV0fS3AAf0lVjIEsoCL5AAAAAElFTkSuQmCC" alt=""></a>
-    <div class="mobile-nav__linie"></div>
-    <ul class="navigation">
-        <a href="#" class="navigation__link pl-20">Продукция</a>
-        <a href="#" class="navigation__link pl-20">Компания</a>
-        <a href="#" class="navigation__link pl-20">Контакты</a>
+
+<aside class="sidebar" js-nav>
+    <a href="#" class="sidebar__top"
+       data-fancybox="modal-mobile" data-animation-duration="500" data-src="#modal-mobile" href="javascript:;">
+        Оставить заявку
+        <img class="sidebar__arrow" src="img/ar-blu.png" alt="arrow-blue">
+    </a>
+    <ul class="sidebar__list">
+        <li class="sidebar__list-item">
+            <a href="/product.html" class="sidebar__link">Продукция</a>
+        </li>
+        <li class="sidebar__list-item">
+            <a href="/about.html" class="sidebar__link">Компания</a>
+        </li>
+        <li class="sidebar__list-item">
+            <a href="/contact.html" class="sidebar__link">Контакты</a>
+        </li>
     </ul>
-    <div class="mobile-nav__linie footer__linie"></div>
-    <div class="mobile-nav__footer">
-        <p class="pl-20 ">Новосибирск,  ул. Петухова, д. 17</p>
-        <a href="" class="pl-20">+7 (383) 207-52-20</a>
+    <div class="sidebar__footer">
+        <p class="sidebar__desc">Новосибирск, ул. Петухова, д. 17</p>
+        <a href="tel:+7383275220" class="sidebar__phone">+7 (383) 207-52-20</a>
     </div>
-</nav>
-<!-- Этот тэг раскомментировать, следующий - убрать. Чтобы работало видео -->
-<header style="height: auto; background-color: black;" class="header-main" id="header-main" data-vide-bg='video/ARMATURA_internet_FC_8042019'>
-    <!--<header class="header-main" id="header-main">-->
-    <div class="header-cap">
-        <div class="header-cap__logo link-hover" style="display: flex; align-items: center;">
-            <a href="#" style="display: inline-flex;" class="nav-logo">
-                <img src="data:image/png;base64,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" class="nav-logo__img" alt="МеталлПром"></a>
-        </div>
-        <div class="menu-collapse">
-            <ul class="menu">
-                <li class="menu__item">
-                    <a href="#" class="nav__a ff-400-14 link-hover">Продукция</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" class="nav__a ff-400-14 link-hover">Компания</a>
-                </li>
-                <li class="menu__item">
-                    <a href="#" class="nav__a ff-400-14 link-hover">Контакты</a>
-                </li>
-            </ul>
-        </div>
-        <div class="header-cap__btn">
-            <button class="nav__btn c-white ff-400-14 d-flex link-hover" data-toggle="modal" data-target="#modal-form">
+</aside>
+
+<header class="header">
+    <div class="header__top header__top_black">
+        <a href="#" class="header__logo">
+            <img src="img/logo.jpg" class="header__logo-img" alt="МеталлПром">
+        </a>
+
+        <nav class="header__nav">
+            <a href="/product.html" class="header__nav-item">Продукция</a>
+            <a href="/about.html" class="header__nav-item">Компания</a>
+            <a href="/contact.html" class="header__nav-item">Контакты</a>
+        </nav>
+
+        <div class="header__btn">
+            <button class="btn btn-header"
+                    data-fancybox="modal" data-animation-duration="500" data-src="#modal" href="javascript:;">
                 Оставить заявку
-                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAJCAYAAADpeqZqAAAAe0lEQVQYlY2RMQrCQBBFX8AyncfQe9iKjRDRO6XwHCb38QyCKUPCS+EEtgjrfphiPvP4zAwqmTr50yP1cwBqrXYBNqXQWm2AV5VKPQB7YGZbI/ABOuAI3FDf/teQzI074BxJUybpC7yiv5fu9IyUS+n1+vQIJdD6pyb1FyD9M4W10E7NAAAAAElFTkSuQmCC" alt="Arrow right" class="arrow__btn">
+                <img src="img/arrow-right-black.png" alt="arrow-right" class="btn-header__arrow">
             </button>
         </div>
     </div>
@@ -86,8 +85,8 @@
     <h1 class="page-title page-title_thin">НСО-2</h1>
 
     <div class="breadcrumbs">
-        <a href="#" class="breadcrumbs__link">Главная</a>
-        <a href="#" class="breadcrumbs__link">Продукция</a>
+        <a href="/" class="breadcrumbs__link">Главная</a>
+        <a href="/products.html" class="breadcrumbs__link">Продукция</a>
         <a href="#" class="breadcrumbs__link">Зажимы натяжные спиральные</a>
     </div>
 
@@ -243,6 +242,68 @@
     </div>    <!-- class="footer__full" -->
 
 </footer>
+
+<!--модальное окно-->
+<div class="modal" id="modal" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form action="#" class="modal-form">
+                        <div class="modal-form__block">
+                            <input type="text" name="name" placeholder="Имя" class="modal-form__input mr2r">
+                            <input type="text" name="company" placeholder="Компания" class="modal-form__input">
+                        </div>    <!-- class="modal-form__block" -->
+
+                        <div class="modal-form__block">
+                            <input type="text" name="email" placeholder="E-mail" class="modal-form__input mr2r">
+                            <input type="text" name="phone" placeholder="Телефон" class="modal-form__input">
+                        </div>    <!-- class="modal-form__block" -->
+
+                        <div class="modal-form__block">
+                            <textarea name="letter" placeholder="Сообщение" class="modal-form__text"></textarea>
+                        </div>    <!-- class="modal-form__block" -->
+                        <div class="modal-form__block">
+                            <button class="btn btn-blue btn-blue_modal" type="submit">Отправить</button>
+                        </div>    <!-- class="modal-form__block" -->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--модальное окно-->
+<div class="modal" id="modal-mobile" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form action="#" class="modal-form">
+                        <div class="modal-form__block">
+                            <input type="text" name="name" placeholder="Имя" class="modal-form__input mr2r">
+                            <input type="text" name="company" placeholder="Компания" class="modal-form__input">
+                        </div>    <!-- class="modal-form__block" -->
+
+                        <div class="modal-form__block">
+                            <input type="text" name="email" placeholder="E-mail" class="modal-form__input mr2r">
+                            <input type="text" name="phone" placeholder="Телефон" class="modal-form__input">
+                        </div>    <!-- class="modal-form__block" -->
+
+                        <div class="modal-form__block">
+                            <textarea name="letter" placeholder="Сообщение" class="modal-form__text"></textarea>
+                        </div>    <!-- class="modal-form__block" -->
+                        <div class="modal-form__block">
+                            <button class="btn btn-blue btn-blue_modal" type="submit">Отправить</button>
+                        </div>    <!-- class="modal-form__block" -->
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="js/script.min.js"></script>
 </body>

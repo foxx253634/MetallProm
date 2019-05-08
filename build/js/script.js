@@ -5,21 +5,42 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 //# sourceMappingURL=jquery.min.map
 jQuery(document).ready(function(e) {
 
-    initSwiper();
+    initCookiePolicyAlert();
     initTable();
+    initVideo();
+    initMenuBtn();
+    initSwiper();
 
-    function initSwiper() {
-        var mySwiper = new Swiper ('.swiper-company', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction'
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            }
-        })
+    function initCookiePolicyAlert() {
+
+        var cookieName = 'policyalertdismissed',
+            messageDismissed = document.cookie.match(cookieName);
+
+        if (!messageDismissed) {
+            initAlert();
+        }
+
+        function initAlert() {
+            $('[js-notification]').removeClass('hide');
+
+            $('[js-notification-agree]').click(function() {
+                var expireTime = new Date(),
+                    interval = 365 * 24 * 60 * 60 * 1000;
+                expireTime.setTime(expireTime.getTime() + interval);
+
+                document.cookie = cookieName + '=yes; path=/; expires=' + expireTime.toUTCString();
+
+                hideAlert();
+            });
+
+            $('[js-notification-close]').click(function() {
+                hideAlert();
+            });
+        }
+
+        function hideAlert() {
+            $('[js-notification]').addClass('hide');
+        }
     }
 
     function initTable() {
@@ -33,5 +54,139 @@ jQuery(document).ready(function(e) {
 
             $('[js-table-th-p]').height(tableTh);
         });
+    }
+
+    function initVideo() {
+
+        var video =  $('[js-main-video]');
+        video.on("click",function(){
+            video.play();
+        },false);
+    }
+
+    function initMenuBtn() {
+        $('[js-menu-btn]').on("click", function () {
+            $(this).toggleClass('open');
+            $('[js-nav]').toggleClass('open');
+            $('[js-body]').toggleClass('menu-open');
+        });
+    }
+
+    function initSwiper() {
+        var companySwiper = new Swiper ('.swiper-company', {
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction'
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            }
+        });
+        var productSwiper = new Swiper ('.swiper-product', {
+            loop: true,
+            slidesPerView: 1,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction'
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev'
+            },
+            breakpointsInverse: true,
+            breakpoints: {
+                480: {
+                    spaceBetween: 15,
+                    slidesPerView: 2
+                },
+                768: {
+                    spaceBetween: 15,
+                    slidesPerView: 3
+                },
+                1200: {
+                    spaceBetween: 15,
+                    slidesPerView: 4
+                },
+                1366: {
+                    spaceBetween: 15,
+                    slidesPerView: 4
+                }
+            }
+        });
+        var productsSwiper = new Swiper ('.swiper-products', {
+            // Optional parameters
+            direction: 'vertical',
+            loop: true,
+            slidesPerView: 1,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+
+        });
+        var workSwiper = new Swiper ('.swiper-work', {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 1,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpointsInverse: true,
+            breakpoints: {
+                768: {
+                    spaceBetween: 15,
+                    slidesPerView: 2
+                },
+                1200: {
+                    spaceBetween: 15,
+                    slidesPerView: 3
+                }
+            }
+        });
+        var equipmentkSwiper = new Swiper ('.swiper-equipment', {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 1,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            }
+        });
+        var clientSwiper = new Swiper ('.swiper-client', {
+            // Optional parameters
+            loop: true,
+            slidesPerView: 1,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true
+            },
+            breakpointsInverse: true,
+            breakpoints: {
+                768: {
+                    spaceBetween: 30,
+                    slidesPerView: 2
+                },
+                1024: {
+                    spaceBetween: 30,
+                    slidesPerView: 3
+                },
+                1366: {
+                    spaceBetween: 30,
+                    slidesPerView: 4
+                }
+            }
+        })
+
     }
 });
