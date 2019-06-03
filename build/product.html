@@ -73,7 +73,7 @@
         <div class="header__btn">
             <button class="btn btn-header"
                     data-fancybox="modal" data-animation-duration="500" data-src="#modal" href="javascript:;">
-                Оставить заявку
+                <span class="counter" style="display: none" js-product-counter>12</span>Оставить заявку
                 <img src="img/arrow-right-black.png" alt="arrow-right" class="btn-header__arrow">
             </button>
         </div>
@@ -82,7 +82,7 @@
 
 <section class="page-section">
 
-    <h1 class="page-title page-title_thin">НСО-2</h1>
+    <h1 class="page-title">НСО-2</h1>
 
     <div class="breadcrumbs">
         <a href="/" class="breadcrumbs__link">Главная</a>
@@ -107,7 +107,10 @@
     </p>
 
     <div class="page-btn">
-        <button class="btn btn-primary">Добавить к заявке</button>
+        <button class="btn btn-primary" js-add-product>
+            <span js-add-product-text-before>Добавить к заявке</span>
+            <span style="display: none" js-add-product-text-after>Добавлено</span>
+        </button>
     </div>
 
 </section>

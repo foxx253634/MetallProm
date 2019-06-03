@@ -5,11 +5,52 @@ void 0===c?d&&"get"in d&&null!==(e=d.get(a,b))?e:(e=n.find.attr(a,b),null==e?voi
 //# sourceMappingURL=jquery.min.map
 jQuery(document).ready(function(e) {
 
+    initAddProduct();
+    initHeader();
+    initRemove();
     initCookiePolicyAlert();
     initTable();
     initVideo();
     initMenuBtn();
     initSwiper();
+
+    function initAddProduct() {
+        var addBtn = $('[js-add-product]');
+        var textBefore = $('[js-add-product-text-before]');
+        var textAfter = $('[js-add-product-text-after]');
+        var productCounter = $('[js-product-counter]');
+
+        addBtn.on("click", function () {
+            textBefore.remove();
+            textAfter.show();
+            productCounter.show();
+        })
+    }
+
+    function initHeader() {
+
+        var headerTop = $('[js-header-top]');
+        var headerLogo = $('[js-header-logo]');
+        var headerArrow = $('[js-header-arrow]');
+
+        $(window).scroll(function(){
+            if ( $(window).scrollTop() >= 45 ){
+                headerTop.addClass("header__top_fixed");
+                headerLogo.attr("src", "img/logo.jpg");
+                headerArrow.attr("src", "img/arrow-right-black.png");
+            } else {
+                headerTop.removeClass("header__top_fixed");
+                headerLogo.attr("src", "img/logo-white.png");
+                headerArrow.attr("src", "img/arrow-right.png");
+            }
+        });
+    }
+
+    function initRemove() {
+        $('[js-remove-btn]').on("click", function () {
+            $(this).closest('[js-remove-item]').remove();
+        })
+    }
 
     function initCookiePolicyAlert() {
 
@@ -84,37 +125,6 @@ jQuery(document).ready(function(e) {
                 prevEl: '.swiper-button-prev'
             }
         });
-        var productSwiper = new Swiper ('.swiper-product', {
-            loop: true,
-            slidesPerView: 1,
-            pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction'
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev'
-            },
-            breakpointsInverse: true,
-            breakpoints: {
-                480: {
-                    spaceBetween: 15,
-                    slidesPerView: 2
-                },
-                768: {
-                    spaceBetween: 15,
-                    slidesPerView: 3
-                },
-                1200: {
-                    spaceBetween: 15,
-                    slidesPerView: 4
-                },
-                1366: {
-                    spaceBetween: 15,
-                    slidesPerView: 4
-                }
-            }
-        });
         var productsSwiper = new Swiper ('.swiper-products', {
             // Optional parameters
             direction: 'vertical',
@@ -125,8 +135,11 @@ jQuery(document).ready(function(e) {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true
+            },
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next'
             }
-
         });
         var workSwiper = new Swiper ('.swiper-work', {
             // Optional parameters

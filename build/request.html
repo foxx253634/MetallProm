@@ -2,10 +2,17 @@
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title>404</title>
+    <title>Оформление заявки</title>
     <meta name="robots" content="noindex, nofollow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/style.min.css">
+
+    <!--Bootstrap grid only-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap-grid.css" />
+
+    <!--Swiper-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script>
 
     <!--jQuery-->
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
@@ -81,18 +88,68 @@
 
 <section class="page-section">
 
-    <h2 class="page-desc-title mt45">
-        Ошибка 404
-    </h2>
+    <h1 class="page-title">Оформление заявки</h1>
 
-    <h1 class="page-title pt15 pb30">Такой страницы нет на сайте</h1>
+    <div class="breadcrumbs">
+        <a href="/" class="breadcrumbs__link">Главная</a>
+        <a href="/products.html" class="breadcrumbs__link">Продукция</a>
+        <a href="/product.html" class="breadcrumbs__link">Зажимы натяжные спиральные</a>
+        <a href="#" class="breadcrumbs__link">Оформление заявки</a>
+    </div>
 
-    <p class="page-desc">
-        Скорее всего ссылка устарела или была изменена
-    </p>
+</section>
 
-    <div class="page-btn mt77 mb160">
-        <a href="/" class="btn btn-primary">Вернуться на главную</a>
+<section class="page-section page-section_gray">
+
+    <h1 class="page-desc-title">
+        Вы выбрали
+    </h1>
+
+    <ul class="page-list page-list_border-bottom">
+        <li class="page-list__item" js-remove-item>
+            НСО – зажим натяжной спиральный
+            <button class="btn btn-link" js-remove-btn>
+                Удалить
+                <img src="/img/close.svg" alt="cross" class="">
+            </button>
+        </li>
+        <li class="page-list__item" js-remove-item>
+            Зажим натяжной ПЗС
+            <button class="btn btn-link" js-remove-btn>
+                Удалить
+                <img src="/img/close.svg" alt="cross" class="">
+            </button>
+        </li>
+        <li class="page-list__item" js-remove-item>
+            Зажим натяжной ПЗС
+            <button class="btn btn-link" js-remove-btn>
+                Удалить
+                <img src="/img/close.svg" alt="cross" class="">
+            </button>
+        </li>
+    </ul>
+
+</section>
+
+<section class="page-section">
+
+    <div class="feedback-form">
+        <form action="#" class="main-form">
+
+            <div class="main-form__block">
+                <input type="text" name="name" required="" placeholder="Имя" class="form-control">
+                <input type="text" name="company" required="" placeholder="Компания" class="form-control">
+            </div>
+
+            <div class="main-form__block">
+                <input type="text" name="email" required="" placeholder="E-mail" class="form-control">
+                <input type="tel" name="phone" required="" placeholder="Телефон" class="form-control">
+            </div>
+
+            <textarea name="letter" id="" placeholder="Коментарий к заявке" class="form-textarea"></textarea>
+            <button class="btn-blue main-form__btn ff-400-14" type="submit">Отправить</button>
+
+        </form>
     </div>
 
 </section>
